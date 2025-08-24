@@ -2,176 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Sing AI Design System - Futuristic Music Platform 
+/* Sing AI Design System - Clean Professional Style 
 All colors are HSL for perfect theming capability.
 */
 
 @layer base {
   :root {
     /* Core Background System */
-    --background: 248 25% 7%;           /* Deep space purple */
-    --background-secondary: 250 20% 12%; /* Slightly lighter purple */
-    --foreground: 0 0% 98%;             /* Pure white text */
+    --background: 0 0% 100%;            /* Pure white */
+    --background-secondary: 0 0% 98%;   /* Very light gray */
+    --foreground: 0 0% 9%;              /* Near black text */
 
     /* Card & Surface System */
-    --card: 248 25% 7% / 0.8;           /* Translucent cards */
-    --card-foreground: 0 0% 98%;
-    --card-glass: 250 30% 15% / 0.1;    /* Glassmorphism effect */
+    --card: 0 0% 100%;                  /* White cards */
+    --card-foreground: 0 0% 9%;
+    --card-border: 0 0% 90%;            /* Light border */
 
-    --popover: 248 25% 7% / 0.95;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
 
-    /* Primary Brand Colors - Electric Purple */
-    --primary: 262 83% 58%;             /* Vibrant purple */
-    --primary-glow: 262 100% 75%;       /* Glowing purple */
+    /* Primary Brand Colors - Sing AI Purple */
+    --primary: 262 83% 58%;             /* Sing AI brand purple */
     --primary-foreground: 0 0% 100%;
-    --primary-muted: 262 83% 58% / 0.1;
+    --primary-light: 262 83% 95%;       /* Light purple background */
 
-    /* Secondary Brand Colors - Neon Blue */
-    --secondary: 200 100% 50%;          /* Electric blue */
-    --secondary-glow: 200 100% 70%;     /* Glowing blue */
-    --secondary-foreground: 0 0% 100%;
-    --secondary-muted: 200 100% 50% / 0.1;
+    /* Secondary Colors */
+    --secondary: 0 0% 96%;              /* Light gray */
+    --secondary-foreground: 0 0% 9%;
 
     /* Accent System */
-    --accent: 280 100% 70%;             /* Pink-purple accent */
-    --accent-foreground: 0 0% 100%;
-    --accent-muted: 280 100% 70% / 0.1;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
 
     /* Utility Colors */
-    --muted: 248 15% 20%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --destructive: 0 100% 67%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 248 15% 20% / 0.3;
-    --input: 248 15% 20% / 0.5;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
     --ring: 262 83% 58%;
 
-    --radius: 1rem;
-
-    /* Gradient System */
-    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(280 100% 70%));
-    --gradient-secondary: linear-gradient(135deg, hsl(200 100% 50%), hsl(220 100% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(248 25% 7%), hsl(262 50% 15%), hsl(280 60% 20%));
-    --gradient-card: linear-gradient(135deg, hsl(250 30% 15% / 0.1), hsl(260 40% 20% / 0.05));
-
-    /* Animation & Effects */
-    --glow-primary: 0 0 20px hsl(262 83% 58% / 0.5);
-    --glow-secondary: 0 0 20px hsl(200 100% 50% / 0.5);
-    --shadow-glass: 0 8px 32px hsl(248 25% 7% / 0.3);
-    --backdrop-blur: blur(20px);
-
-    /* Typography Scale */
-    --font-hero: 4rem;
-    --font-heading: 2.5rem;
-    --font-subheading: 1.5rem;
-    --font-body: 1rem;
-  }
-}
-
-/* Custom Utility Classes */
-@layer components {
-  /* Glass Card Effect */
-  .glass-card {
-    @apply bg-card/10 backdrop-blur-xl border border-white/10 rounded-xl;
-    box-shadow: var(--shadow-glass);
-  }
-
-  /* Gradient Backgrounds */
-  .bg-gradient-hero {
-    background: var(--gradient-hero);
-  }
-
-  .bg-gradient-primary {
-    background: var(--gradient-primary);
-  }
-
-  .bg-gradient-secondary {
-    background: var(--gradient-secondary);
-  }
-
-  /* Glow Effects */
-  .glow-primary {
-    box-shadow: var(--glow-primary);
-  }
-
-  .glow-secondary {
-    box-shadow: var(--glow-secondary);
-  }
-
-  /* Animation Classes */
-  .float-animation {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .pulse-glow {
-    animation: pulseGlow 2s ease-in-out infinite alternate;
-  }
-
-  .rotate-slow {
-    animation: rotateSlow 20s linear infinite;
-  }
-
-  /* Hero Text Gradient */
-  .text-gradient {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
-/* Keyframe Animations */
-@layer base {
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-
-  @keyframes pulseGlow {
-    0% {
-      box-shadow: 0 0 20px hsl(262 83% 58% / 0.5);
-    }
-    100% {
-      box-shadow: 0 0 40px hsl(262 83% 58% / 0.8);
-    }
-  }
-
-  @keyframes rotateSlow {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes slideInFromLeft {
-    0% {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideInFromRight {
-    0% {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
+    --radius: 0.5rem;
   }
 }
 

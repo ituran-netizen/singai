@@ -1,17 +1,17 @@
-import Hero from "@/components/Hero";
-import Features from "@/components/Features";
-import Community from "@/components/Community";
-import AppShowcase from "@/components/AppShowcase";
-import Footer from "@/components/Footer";
+import Navigation from "@/components/Navigation";
+import SimpleHero from "@/components/SimpleHero";
+import FAQ from "@/components/FAQ";
+import Contact from "@/components/Contact";
+import SimpleFooter from "@/components/SimpleFooter";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Hero />
-      <Features />
-      <Community />
-      <AppShowcase />
-      <Footer />
+      <Navigation />
+      <SimpleHero />
+      <FAQ />
+      <Contact />
+      <SimpleFooter />
     </div>
   );
 };
