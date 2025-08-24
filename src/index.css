@@ -2,50 +2,241 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Sing AI Design System - Clean Professional Style 
-All colors are HSL for perfect theming capability.
+/* Sing AI Design System - Premium Visual Excellence
+Outshining HubX and Nova with music-themed sophistication
 */
 
 @layer base {
   :root {
-    /* Core Background System */
-    --background: 0 0% 100%;            /* Pure white */
-    --background-secondary: 0 0% 98%;   /* Very light gray */
-    --foreground: 0 0% 9%;              /* Near black text */
+    /* Advanced Background System */
+    --background: 0 0% 4%;              /* Deep black for premium feel */
+    --background-secondary: 0 0% 8%;    /* Subtle variation */
+    --background-tertiary: 0 0% 12%;    /* Card backgrounds */
+    --foreground: 0 0% 98%;             /* Crisp white text */
 
-    /* Card & Surface System */
-    --card: 0 0% 100%;                  /* White cards */
-    --card-foreground: 0 0% 9%;
-    --card-border: 0 0% 90%;            /* Light border */
+    /* Sophisticated Card System */
+    --card: 0 0% 8% / 0.8;              /* Translucent dark cards */
+    --card-foreground: 0 0% 98%;
+    --card-border: 262 83% 58% / 0.2;   /* Subtle purple borders */
+    --card-glass: 0 0% 100% / 0.05;     /* Ultra-subtle glass effect */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
 
-    /* Primary Brand Colors - Sing AI Purple */
-    --primary: 262 83% 58%;             /* Sing AI brand purple */
+    /* Premium Brand Colors - Music-inspired */
+    --primary: 262 83% 58%;             /* Signature purple */
+    --primary-bright: 262 100% 70%;     /* Brighter variant */
+    --primary-glow: 262 100% 80%;       /* Glowing effect */
     --primary-foreground: 0 0% 100%;
-    --primary-light: 262 83% 95%;       /* Light purple background */
+    --primary-light: 262 83% 95%;
 
-    /* Secondary Colors */
-    --secondary: 0 0% 96%;              /* Light gray */
-    --secondary-foreground: 0 0% 9%;
+    /* Secondary - Electric Audio Blue */
+    --secondary: 200 100% 60%;          /* Electric blue */
+    --secondary-bright: 200 100% 70%;   /* Brighter blue */
+    --secondary-glow: 200 100% 80%;     /* Glowing blue */
+    --secondary-foreground: 0 0% 100%;
 
-    /* Accent System */
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 9%;
+    /* Accent - Neon Pink */
+    --accent: 320 100% 70%;             /* Hot pink accent */
+    --accent-bright: 320 100% 80%;      /* Brighter pink */
+    --accent-foreground: 0 0% 100%;
 
     /* Utility Colors */
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 100% 67%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
+    --border: 0 0% 20% / 0.3;
+    --input: 0 0% 15%;
     --ring: 262 83% 58%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Advanced Gradient System */
+    --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(262 100% 70% / 0.4), transparent 70%), 
+                     linear-gradient(135deg, hsl(0 0% 4%), hsl(262 50% 8%), hsl(200 100% 8%), hsl(0 0% 4%));
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(320 100% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(200 100% 60%), hsl(262 83% 58%));
+    --gradient-accent: linear-gradient(135deg, hsl(320 100% 70%), hsl(262 100% 70%));
+    --gradient-text: linear-gradient(135deg, hsl(262 100% 80%), hsl(200 100% 70%), hsl(320 100% 80%));
+    
+    /* Premium Effects */
+    --glow-primary: 0 0 80px hsl(262 100% 70% / 0.6), 0 0 40px hsl(262 100% 70% / 0.4);
+    --glow-secondary: 0 0 60px hsl(200 100% 70% / 0.5), 0 0 30px hsl(200 100% 70% / 0.3);
+    --glow-accent: 0 0 60px hsl(320 100% 70% / 0.5), 0 0 30px hsl(320 100% 70% / 0.3);
+    --shadow-premium: 0 25px 50px hsl(262 100% 4% / 0.5), 0 0 100px hsl(262 100% 70% / 0.1);
+    --backdrop-premium: blur(40px) saturate(200%);
+
+    /* Typography Scale */
+    --font-hero: clamp(3rem, 8vw, 8rem);
+    --font-heading: clamp(2rem, 5vw, 4rem);
+    --font-subheading: clamp(1.25rem, 3vw, 2rem);
+  }
+}
+
+/* Premium Utility Classes */
+@layer components {
+  /* Advanced Glass Cards */
+  .glass-premium {
+    @apply backdrop-blur-xl border border-white/10 rounded-2xl;
+    background: linear-gradient(135deg, hsl(0 0% 100% / 0.05), hsl(0 0% 100% / 0.02));
+    box-shadow: var(--shadow-premium);
+  }
+
+  .glass-music {
+    @apply backdrop-blur-2xl border border-primary/20 rounded-2xl;
+    background: linear-gradient(135deg, hsl(262 100% 70% / 0.1), hsl(200 100% 70% / 0.05));
+    box-shadow: var(--glow-primary);
+  }
+
+  /* Advanced Gradient Backgrounds */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-premium {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-audio {
+    background: var(--gradient-secondary);
+  }
+
+  /* Premium Glow Effects */
+  .glow-premium {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-audio {
+    box-shadow: var(--glow-secondary);
+  }
+
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+
+  /* Advanced Animations */
+  .float-premium {
+    animation: floatPremium 8s ease-in-out infinite;
+  }
+
+  .pulse-premium {
+    animation: pulsePremium 3s ease-in-out infinite alternate;
+  }
+
+  .rotate-premium {
+    animation: rotatePremium 30s linear infinite;
+  }
+
+  .wave-animation {
+    animation: waveMotion 4s ease-in-out infinite;
+  }
+
+  /* Premium Text Effects */
+  .text-gradient-premium {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px hsl(262 100% 80% / 0.8), 0 0 40px hsl(262 100% 80% / 0.4);
+  }
+
+  /* Audio Visualizer Effect */
+  .audio-bars {
+    display: flex;
+    align-items: end;
+    gap: 2px;
+    height: 40px;
+  }
+
+  .audio-bar {
+    width: 3px;
+    background: var(--gradient-secondary);
+    border-radius: 2px;
+    animation: audioVisualize var(--duration, 1s) ease-in-out infinite alternate;
+    animation-delay: var(--delay, 0s);
+  }
+}
+
+/* Premium Keyframe Animations */
+@layer base {
+  @keyframes floatPremium {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-30px) rotate(1deg);
+    }
+    66% {
+      transform: translateY(-15px) rotate(-1deg);
+    }
+  }
+
+  @keyframes pulsePremium {
+    0% {
+      box-shadow: 0 0 40px hsl(262 100% 70% / 0.4);
+      transform: scale(1);
+    }
+    100% {
+      box-shadow: 0 0 80px hsl(262 100% 70% / 0.8), 0 0 120px hsl(200 100% 70% / 0.4);
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes rotatePremium {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes gradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes waveMotion {
+    0%, 100% {
+      transform: translateY(0px) scaleY(1);
+    }
+    50% {
+      transform: translateY(-10px) scaleY(1.1);
+    }
+  }
+
+  @keyframes audioVisualize {
+    0% {
+      height: 20%;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+
+  @keyframes particleFloat {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateY(-100px) translateX(20px);
+      opacity: 1;
+    }
+  }
+}
   }
 }
 
