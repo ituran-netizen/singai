@@ -167,7 +167,7 @@ const PremiumFeatures = () => {
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" 
                 alt="Download on the App Store" 
-                className="h-16 hover:scale-110 transition-all duration-500 filter brightness-0 invert"
+                className="h-16 hover:scale-110 transition-all duration-500"
               />
             </a>
             
@@ -175,7 +175,7 @@ const PremiumFeatures = () => {
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
                 alt="Get it on Google Play" 
-                className="h-16 hover:scale-110 transition-all duration-500 filter brightness-0 invert"
+                className="h-16 hover:scale-110 transition-all duration-500"
               />
             </a>
           </div>
