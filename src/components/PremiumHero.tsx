@@ -55,9 +55,9 @@ const PremiumHero = () => {
 
             {/* Hero Headlines */}
             <h1 className="font-black mb-8 leading-none">
-              <div className="text-6xl lg:text-8xl mb-4 text-glow">Your Voice. 🎶</div>
+              <div className="text-6xl lg:text-8xl mb-4 text-glow">Your Voice.</div>
               <div className="text-6xl lg:text-8xl mb-4 text-glow">Your Music.</div>
-              <div className="text-6xl lg:text-8xl text-gradient-premium">Powered by AI.</div>
+              <div className="text-6xl lg:text-8xl text-gradient-premium">Powered by AI. 🎶</div>
             </h1>
 
             {/* Subtext */}
