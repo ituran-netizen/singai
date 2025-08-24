@@ -15,21 +15,20 @@ const Navigation = () => {
         <span className="text-2xl font-bold text-foreground">Sing AI</span>
       </div>
 
-      {/* Navigation Links */}
-      <div className="flex items-center gap-8">
-        <a 
-          href="#ContactSupport" 
-          className="text-foreground hover:text-primary transition-colors font-medium"
-        >
-          Contact Support
-        </a>
-        <a 
-          href="#FAQ" 
-          className="text-foreground hover:text-primary transition-colors font-medium"
-        >
-          FAQS
-        </a>
-      </div>
+        <div className="flex items-center gap-8">
+          <a 
+            href="#ContactSupport" 
+            className="text-foreground hover:text-primary transition-colors font-medium"
+          >
+            Contact Support
+          </a>
+          <a 
+            href="#FAQ" 
+            className="text-foreground hover:text-primary transition-colors font-medium"
+          >
+            FAQS
+          </a>
+        </div>
     </nav>
   );
 };
