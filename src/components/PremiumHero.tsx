@@ -55,13 +55,13 @@ const PremiumHero = () => {
 
             {/* Hero Headlines */}
             <h1 className="font-black mb-8 leading-none">
-              <div className="text-6xl lg:text-8xl mb-4 text-glow">Your Voice.</div>
-              <div className="text-6xl lg:text-8xl mb-4 text-glow">Your Music.</div>
-              <div className="text-6xl lg:text-8xl text-gradient-premium">Powered by AI. 🎶</div>
+              <div className="text-7xl lg:text-8xl mb-4 text-glow">Your Voice.</div>
+              <div className="text-7xl lg:text-8xl mb-4 text-glow">Your Music.</div>
+              <div className="text-7xl lg:text-8xl text-gradient-premium">Powered by AI. 🎶</div>
             </h1>
 
             {/* Subtext */}
-            <p className="text-xl lg:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
+            <p className="text-2xl lg:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
               Create, Cover, and Remix songs instantly with cutting-edge AI technology. 
               <span className="text-secondary-glow"> No experience needed.</span>
             </p>
@@ -90,18 +90,18 @@ const PremiumHero = () => {
             </div>
 
             {/* Premium Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
-              <div className="glass-premium p-6 text-center hover:scale-105 transition-all duration-500 glow-premium">
-                <div className="text-3xl lg:text-4xl font-black text-primary-glow mb-2">2M+</div>
-                <div className="text-muted-foreground font-medium">Songs Created</div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl">
+              <div className="glass-premium p-8 text-center hover:scale-105 transition-all duration-500 glow-premium animate-fade-in" style={{animationDelay: '0s'}}>
+                <div className="text-5xl lg:text-4xl font-black text-primary-glow mb-3">2M+</div>
+                <div className="text-muted-foreground font-medium text-lg">Songs Created</div>
               </div>
-              <div className="glass-music p-6 text-center hover:scale-105 transition-all duration-500 glow-audio">
-                <div className="text-3xl lg:text-4xl font-black text-secondary-glow mb-2">500K+</div>
-                <div className="text-muted-foreground font-medium">Active Creators</div>
+              <div className="glass-music p-8 text-center hover:scale-105 transition-all duration-500 glow-audio animate-fade-in" style={{animationDelay: '0.2s'}}>
+                <div className="text-5xl lg:text-4xl font-black text-secondary-glow mb-3">500K+</div>
+                <div className="text-muted-foreground font-medium text-lg">Active Creators</div>
               </div>
-              <div className="glass-premium p-6 text-center hover:scale-105 transition-all duration-500 glow-accent">
-                <div className="text-3xl lg:text-4xl font-black text-accent-bright mb-2">100%</div>
-                <div className="text-muted-foreground font-medium">Royalty Free</div>
+              <div className="glass-premium p-8 text-center hover:scale-105 transition-all duration-500 glow-accent animate-fade-in" style={{animationDelay: '0.4s'}}>
+                <div className="text-5xl lg:text-4xl font-black text-accent-bright mb-3">100%</div>
+                <div className="text-muted-foreground font-medium text-lg">Royalty Free</div>
               </div>
             </div>
           </div>
