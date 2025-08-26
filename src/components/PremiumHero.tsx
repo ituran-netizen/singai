@@ -92,15 +92,15 @@ const PremiumHero = () => {
             {/* Premium Stats */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl">
               <div className="glass-premium p-8 text-center hover:scale-105 transition-all duration-500 glow-premium animate-fade-in" style={{animationDelay: '0s'}}>
-                <div className="text-5xl lg:text-4xl font-black text-primary-glow mb-3">2M+</div>
+                <div className="text-3xl lg:text-4xl font-black text-primary-glow mb-3">2M+</div>
                 <div className="text-muted-foreground font-medium text-lg">Songs Created</div>
               </div>
               <div className="glass-music p-8 text-center hover:scale-105 transition-all duration-500 glow-audio animate-fade-in" style={{animationDelay: '0.2s'}}>
-                <div className="text-5xl lg:text-4xl font-black text-secondary-glow mb-3">500K+</div>
+                <div className="text-3xl lg:text-4xl font-black text-secondary-glow mb-3">500K+</div>
                 <div className="text-muted-foreground font-medium text-lg">Active Creators</div>
               </div>
               <div className="glass-premium p-8 text-center hover:scale-105 transition-all duration-500 glow-accent animate-fade-in" style={{animationDelay: '0.4s'}}>
-                <div className="text-5xl lg:text-4xl font-black text-accent-bright mb-3">100%</div>
+                <div className="text-3xl lg:text-4xl font-black text-accent-bright mb-3">100%</div>
                 <div className="text-muted-foreground font-medium text-lg">Royalty Free</div>
               </div>
             </div>
