@@ -77,14 +77,16 @@ const PremiumHero = () => {
                 <Zap size={20} className="ml-3 text-accent-bright" />
               </Button>
               
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-secondary-glow text-secondary-glow hover:bg-secondary-glow/10 hover:scale-110 transition-all duration-500 text-xl px-10 py-6 h-auto rounded-2xl font-bold backdrop-blur-xl"
-              >
-                <Music size={24} className="mr-3" />
-                Download App
-              </Button>
+              <a href="https://play.google.com/store/apps/details?id=com.proksi.singai" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-2 border-secondary-glow text-secondary-glow hover:bg-secondary-glow/10 hover:scale-110 transition-all duration-500 text-xl px-10 py-6 h-auto rounded-2xl font-bold backdrop-blur-xl"
+                >
+                  <Music size={24} className="mr-3" />
+                  Download App
+                </Button>
+              </a>
             </div>
 
             {/* Premium Stats */}
