@@ -1,8 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Play, Sparkles, Zap, Music } from "lucide-react";
 import appMockupImage from "@/assets/app-mockup.jpg";
+import MobilePhoneImage from "./MobilePhoneImage";
+import useScrollReveal from "@/hooks/useScrollReveal";
 
 const PremiumHero = () => {
+  const statsRef1 = useScrollReveal();
+  const statsRef2 = useScrollReveal();
+  const statsRef3 = useScrollReveal();
+
   return (
     <section className="min-h-screen relative overflow-hidden bg-gradient-hero">
       {/* Animated Background Elements */}
@@ -53,114 +59,140 @@ const PremiumHero = () => {
               </div>
             </div>
 
-            {/* Hero Headlines */}
+            {/* Hero Headlines - Updated Typography */}
             <h1 className="font-black mb-8 leading-none">
-              <div className="text-7xl lg:text-8xl mb-4 text-glow">Your Voice.</div>
-              <div className="text-7xl lg:text-8xl mb-4 text-glow">Your Music.</div>
-              <div className="text-5xl lg:text-8xl text-gradient-premium">Powered by AI. 🎶</div>
+              <div className="text-h1 sm:text-5xl lg:text-8xl mb-4 text-glow">Your Voice.</div>
+              <div className="text-h1 sm:text-5xl lg:text-8xl mb-4 text-glow">Your Music.</div>
+              <div className="text-subhead sm:text-3xl lg:text-8xl text-gradient-premium">Powered by AI. 🎶</div>
             </h1>
 
-            {/* Subtext */}
-            <p className="text-2xl lg:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
+            {/* Subtext - Updated Typography */}
+            <p className="text-body sm:text-lg lg:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
               Create, Cover, and Remix songs instantly with cutting-edge AI technology. 
               <span className="text-secondary-glow"> No experience needed.</span>
             </p>
 
-            {/* Premium CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 mb-16">
-              <Button 
-                size="lg" 
-                className="bg-gradient-premium hover:scale-110 transition-all duration-500 glow-premium text-xl px-10 py-6 h-auto rounded-2xl font-bold shadow-2xl group"
-              >
-                <Play size={24} className="mr-3 group-hover:scale-125 transition-transform" />
-                Try Free – 5 Daily Credits
-                <Zap size={20} className="ml-3 text-accent-bright" />
-              </Button>
-              
-              <a href="https://play.google.com/store/apps/details?id=com.proksi.singai" target="_blank" rel="noopener noreferrer">
+            {/* Premium CTA Buttons - Mobile Priority Layout */}
+            <div className="flex flex-col gap-6 mb-16">
+              {/* Primary CTA - Download App (Mobile First) */}
+              <a href="https://play.google.com/store/apps/details?id=com.proksi.singai" target="_blank" rel="noopener noreferrer" className="w-full">
                 <Button 
                   size="lg" 
-                  variant="outline" 
-                  className="border-2 border-secondary-glow text-secondary-glow hover:bg-secondary-glow/10 hover:scale-110 transition-all duration-500 text-xl px-10 py-6 h-auto rounded-2xl font-bold backdrop-blur-xl"
+                  className="bg-gradient-premium hover:scale-105 transition-all duration-500 glow-premium text-lg sm:text-xl px-8 py-6 h-auto rounded-2xl font-bold shadow-2xl group w-full"
                 >
-                  <Music size={24} className="mr-3" />
+                  <Music size={24} className="mr-3 group-hover:scale-125 transition-transform" />
                   Download App
+                  <Sparkles size={20} className="ml-3 text-accent-bright" />
                 </Button>
               </a>
+              
+              {/* Secondary CTA - Hidden on mobile above fold, shown on larger screens */}
+              <div className="hidden sm:block">
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-2 border-secondary-glow text-secondary-glow hover:bg-secondary-glow/10 hover:scale-105 transition-all duration-500 text-lg sm:text-xl px-8 py-6 h-auto rounded-2xl font-bold backdrop-blur-xl w-full"
+                >
+                  <Play size={24} className="mr-3" />
+                  Try Free – 5 Daily Credits
+                  <Zap size={20} className="ml-3 text-accent-bright" />
+                </Button>
+              </div>
             </div>
 
-            {/* Premium Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl">
-              <div className="glass-premium p-8 text-center hover:scale-105 transition-all duration-500 glow-premium animate-fade-in" style={{animationDelay: '0s'}}>
+            {/* Premium Stats - Mobile Stacked with Scroll Reveal */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-2xl">
+              <div 
+                ref={statsRef1}
+                className="glass-premium p-6 sm:p-8 text-center hover:scale-105 transition-all duration-500 glow-premium scroll-reveal"
+              >
                 <div className="text-3xl lg:text-4xl font-black text-primary-glow mb-3">2M+</div>
-                <div className="text-muted-foreground font-medium text-lg">Songs Created</div>
+                <div className="text-muted-foreground font-medium text-body">Songs Created</div>
               </div>
-              <div className="glass-music p-8 text-center hover:scale-105 transition-all duration-500 glow-audio animate-fade-in" style={{animationDelay: '0.2s'}}>
+              <div 
+                ref={statsRef2}
+                className="glass-music p-6 sm:p-8 text-center hover:scale-105 transition-all duration-500 glow-audio scroll-reveal"
+              >
                 <div className="text-3xl lg:text-4xl font-black text-secondary-glow mb-3">500K+</div>
-                <div className="text-muted-foreground font-medium text-lg">Active Creators</div>
+                <div className="text-muted-foreground font-medium text-body">Active Creators</div>
               </div>
-              <div className="glass-premium p-8 text-center hover:scale-105 transition-all duration-500 glow-accent animate-fade-in" style={{animationDelay: '0.4s'}}>
+              <div 
+                ref={statsRef3}
+                className="glass-premium p-6 sm:p-8 text-center hover:scale-105 transition-all duration-500 glow-accent scroll-reveal"
+              >
                 <div className="text-3xl lg:text-4xl font-black text-accent-bright mb-3">100%</div>
-                <div className="text-muted-foreground font-medium text-lg">Royalty Free</div>
+                <div className="text-muted-foreground font-medium text-body">Royalty Free</div>
               </div>
             </div>
           </div>
 
-          {/* Right Content - Premium Phone Mockups */}
+          {/* Right Content - Mobile Phone Component and Mockups */}
           <div className="relative flex justify-center lg:justify-end">
-            {/* Main Phone with Premium Effects */}
-            <div className="relative z-20 float-premium">
-              <div className="glass-music p-8 rounded-3xl glow-premium">
-                <img 
-                  src={appMockupImage} 
-                  alt="Sing AI App Interface" 
-                  className="w-80 lg:w-96 h-auto rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              
-              {/* Floating Audio Visualizers around phone */}
-              <div className="absolute -top-8 -right-8 audio-bars opacity-60">
-                {Array.from({ length: 12 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="audio-bar bg-primary-glow"
-                    style={{
-                      '--duration': `${0.5 + Math.random() * 1.5}s`,
-                      '--delay': `${Math.random() * 1}s`
-                    } as React.CSSProperties}
-                  />
-                ))}
-              </div>
-              
-              <div className="absolute -bottom-8 -left-8 audio-bars opacity-60">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="audio-bar bg-secondary-glow"
-                    style={{
-                      '--duration': `${0.8 + Math.random() * 1.2}s`,
-                      '--delay': `${Math.random() * 1.5}s`
-                    } as React.CSSProperties}
-                  />
-                ))}
-              </div>
+            {/* Mobile Phone Image Component - Desktop and Mobile */}
+            <div className="block lg:hidden mb-8">
+              <MobilePhoneImage 
+                src={appMockupImage}
+                alt="Sing AI App Interface"
+                className="w-64 mx-auto"
+              />
             </div>
 
-            {/* Secondary Phone - Partially Hidden */}
-            <div className="absolute top-16 right-8 z-10 opacity-70 float-premium" style={{animationDelay: '2s'}}>
-              <div className="glass-premium p-6 rounded-3xl">
-                <img 
-                  src={appMockupImage} 
-                  alt="Sing AI App Library" 
-                  className="w-64 h-auto rounded-2xl shadow-xl"
-                />
+            {/* Desktop Phone Mockups */}
+            <div className="hidden lg:block">
+              {/* Main Phone with Premium Effects */}
+              <div className="relative z-20 float-premium">
+                <div className="glass-music p-8 rounded-3xl glow-premium">
+                  <img 
+                    src={appMockupImage} 
+                    alt="Sing AI App Interface" 
+                    className="w-80 lg:w-96 h-auto rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                
+                {/* Floating Audio Visualizers around phone */}
+                <div className="absolute -top-8 -right-8 audio-bars opacity-60">
+                  {Array.from({ length: 12 }).map((_, i) => (
+                    <div
+                      key={i}
+                      className="audio-bar bg-primary-glow"
+                      style={{
+                        '--duration': `${0.5 + Math.random() * 1.5}s`,
+                        '--delay': `${Math.random() * 1}s`
+                      } as React.CSSProperties}
+                    />
+                  ))}
+                </div>
+                
+                <div className="absolute -bottom-8 -left-8 audio-bars opacity-60">
+                  {Array.from({ length: 8 }).map((_, i) => (
+                    <div
+                      key={i}
+                      className="audio-bar bg-secondary-glow"
+                      style={{
+                        '--duration': `${0.8 + Math.random() * 1.2}s`,
+                        '--delay': `${Math.random() * 1.5}s`
+                      } as React.CSSProperties}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* Glowing Orbs */}
-            <div className="absolute top-20 left-10 w-32 h-32 bg-primary-glow/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-32 right-16 w-24 h-24 bg-secondary-glow/30 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
-            <div className="absolute top-1/2 left-0 w-20 h-20 bg-accent-bright/25 rounded-full blur-xl animate-pulse" style={{animationDelay: '3s'}}></div>
+              {/* Secondary Phone - Partially Hidden */}
+              <div className="absolute top-16 right-8 z-10 opacity-70 float-premium" style={{animationDelay: '2s'}}>
+                <div className="glass-premium p-6 rounded-3xl">
+                  <img 
+                    src={appMockupImage} 
+                    alt="Sing AI App Library" 
+                    className="w-64 h-auto rounded-2xl shadow-xl"
+                  />
+                </div>
+              </div>
+
+              {/* Glowing Orbs */}
+              <div className="absolute top-20 left-10 w-32 h-32 bg-primary-glow/20 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-32 right-16 w-24 h-24 bg-secondary-glow/30 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
+              <div className="absolute top-1/2 left-0 w-20 h-20 bg-accent-bright/25 rounded-full blur-xl animate-pulse" style={{animationDelay: '3s'}}></div>
+            </div>
           </div>
         </div>
       </div>

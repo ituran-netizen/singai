@@ -1,20 +1,32 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu } from 'lucide-react';
+import MobileNavigation from './MobileNavigation';
+
 const PremiumNavigation = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-premium border-b border-primary/20">
-      <div className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
-        {/* Logo with Audio Visualizer */}
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-3">
-            <div className="flex items-end gap-1">
-              <div className="w-1 h-6 bg-primary-glow rounded-full wave-animation" style={{animationDelay: '0s'}}></div>
-              <div className="w-1 h-8 bg-secondary-glow rounded-full wave-animation" style={{animationDelay: '0.2s'}}></div>
-              <div className="w-1 h-4 bg-accent-bright rounded-full wave-animation" style={{animationDelay: '0.4s'}}></div>
-              <div className="w-1 h-7 bg-primary-glow rounded-full wave-animation" style={{animationDelay: '0.6s'}}></div>
-              <div className="w-1 h-5 bg-secondary-glow rounded-full wave-animation" style={{animationDelay: '0.8s'}}></div>
+    <>
+      <nav className="fixed top-0 left-0 right-0 z-50 glass-premium border-b border-primary/20">
+        <div className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+          {/* Logo with Audio Visualizer - Links to Home */}
+          <Link 
+            to="/" 
+            className="flex items-center gap-4 hover:scale-105 transition-transform duration-300"
+            aria-label="Go to home"
+          >
+            <div className="flex items-center gap-3">
+              <div className="flex items-end gap-1">
+                <div className="w-1 h-6 bg-primary-glow rounded-full wave-animation" style={{animationDelay: '0s'}}></div>
+                <div className="w-1 h-8 bg-secondary-glow rounded-full wave-animation" style={{animationDelay: '0.2s'}}></div>
+                <div className="w-1 h-4 bg-accent-bright rounded-full wave-animation" style={{animationDelay: '0.4s'}}></div>
+                <div className="w-1 h-7 bg-primary-glow rounded-full wave-animation" style={{animationDelay: '0.6s'}}></div>
+                <div className="w-1 h-5 bg-secondary-glow rounded-full wave-animation" style={{animationDelay: '0.8s'}}></div>
+              </div>
+              <span className="text-2xl font-black text-gradient-premium">Sing AI</span>
             </div>
-            <span className="text-2xl font-black text-gradient-premium">Sing AI</span>
-          </div>
-        </div>
+          </Link>
 
         {/* Premium Navigation Links */}
         <div className="hidden md:flex items-center gap-8">
@@ -34,16 +46,24 @@ const PremiumNavigation = () => {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button className="text-foreground hover:text-primary-glow transition-colors">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+          {/* Mobile Menu Button */}
+          <button 
+            onClick={() => setIsMobileMenuOpen(true)}
+            className="md:hidden text-foreground hover:text-primary-glow transition-colors p-2 rounded-lg hover:bg-primary/10"
+            aria-label="Open navigation menu"
+            aria-expanded={isMobileMenuOpen}
+          >
+            <Menu size={24} />
           </button>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Mobile Navigation Drawer */}
+      <MobileNavigation 
+        isOpen={isMobileMenuOpen} 
+        onClose={() => setIsMobileMenuOpen(false)} 
+      />
+    </>
   );
 };
 
