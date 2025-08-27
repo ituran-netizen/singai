@@ -15,6 +15,7 @@ const PremiumNavigation = () => {
             to="/" 
             className="flex items-center gap-4 hover:scale-105 transition-transform duration-300"
             aria-label="Go to home"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <div className="flex items-center gap-3">
               <div className="flex items-end gap-1">
