@@ -59,15 +59,15 @@ const PremiumHero = () => {
               </div>
             </div>
 
-            {/* Hero Headlines - Updated Typography */}
+            {/* Hero Headlines - Mobile Typography: Your Voice=32px, Powered by AI=20px */}
             <h1 className="font-black mb-8 leading-none">
-              <div className="text-h1 sm:text-5xl lg:text-8xl mb-4 text-glow">Your Voice.</div>
-              <div className="text-h1 sm:text-5xl lg:text-8xl mb-4 text-glow">Your Music.</div>
-              <div className="text-subhead sm:text-3xl lg:text-8xl text-gradient-premium">Powered by AI. 🎶</div>
+              <div className="text-h1 lg:text-8xl mb-4 text-glow">Your Voice.</div>
+              <div className="text-h1 lg:text-8xl mb-4 text-glow">Your Music.</div>
+              <div className="text-subhead lg:text-8xl text-gradient-premium">Powered by AI. 🎶</div>
             </h1>
 
-            {/* Subtext - Updated Typography */}
-            <p className="text-body sm:text-lg lg:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
+            {/* Subtext - Mobile Typography: Body=16px or 14px */}
+            <p className="text-body lg:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
               Create, Cover, and Remix songs instantly with cutting-edge AI technology. 
               <span className="text-secondary-glow"> No experience needed.</span>
             </p>
