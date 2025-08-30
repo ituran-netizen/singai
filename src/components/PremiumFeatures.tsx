@@ -1,4 +1,5 @@
 import { Music, Mic, Palette, Users, Download, Sparkles, Zap, Star } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const PremiumFeatures = () => {
   const features = [
@@ -93,13 +94,17 @@ const PremiumFeatures = () => {
           </div>
         </div>
 
-        {/* Premium Features Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
-          {features.map((feature, index) => (
-            <div 
-              key={index}
-              className="glass-premium p-8 hover:scale-105 transition-all duration-700 group relative overflow-hidden rounded-3xl"
-            >
+        {/* Premium Features Grid - Mobile Stacked */}
+        <div className="space-y-8 lg:grid lg:grid-cols-2 lg:gap-8 lg:space-y-0 mb-20">
+          {features.map((feature, index) => {
+            const cardRef = useScrollReveal<HTMLDivElement>(0.1);
+            return (
+              <div 
+                key={index}
+                ref={cardRef}
+                className="opacity-0 translate-y-8 transition-all duration-700 group relative overflow-hidden rounded-3xl glass-premium p-8 hover:scale-105 revealed:opacity-100 revealed:translate-y-0"
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
               {/* Premium Background Gradient */}
               <div className={`absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-700 ${feature.gradient}`}></div>
               
@@ -149,7 +154,8 @@ const PremiumFeatures = () => {
                 </div>
               )}
             </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Premium Call to Action */}
