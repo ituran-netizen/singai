@@ -61,8 +61,11 @@ const PremiumFeatures = () => {
     }
   ];
 
+  // Select top features for stacking effect
+  const stackedFeatures = features.slice(0, 4);
+
   return (
-    <section className="py-32 px-6 relative overflow-hidden bg-background-secondary">
+    <section className="relative w-full" style={{ height: `${stackedFeatures.length * 110}vh` }}>
       {/* Premium Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-glow/10 rounded-full blur-3xl animate-pulse"></div>
@@ -70,89 +73,101 @@ const PremiumFeatures = () => {
         <div className="absolute top-1/2 left-0 w-64 h-64 bg-accent-bright/10 rounded-full blur-2xl animate-pulse" style={{animationDelay: '4s'}}></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Premium Header */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-3 px-6 py-3 glass-premium mb-8 pulse-premium">
-            <Star size={20} className="text-accent-bright" />
-            <span className="font-semibold text-accent-bright">Premium Features</span>
-          </div>
-          
-          <h2 className="text-5xl lg:text-7xl font-black mb-8 text-gradient-premium">
-            Sing AI: Create, Cover & Share Music with AI
-          </h2>
-          
-          <div className="max-w-5xl mx-auto glass-music p-8 rounded-3xl">
-            <h3 className="text-3xl lg:text-4xl font-bold mb-6 text-glow">
-              SING AI – YOUR VOICE. YOUR MUSIC. POWERED BY AI
-            </h3>
-            <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed">
-              Create songs from scratch, cover your favorites with your own voice, and share your music with 
-              the world. Experience music creation like never before — with the power of Sing AI.
-            </p>
-          </div>
-        </div>
-
-        {/* Premium Features Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
-          {features.map((feature, index) => (
-            <div 
-              key={index}
-              className="glass-premium p-8 hover:scale-105 transition-all duration-700 group relative overflow-hidden rounded-3xl"
-            >
-              {/* Premium Background Gradient */}
-              <div className={`absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-700 ${feature.gradient}`}></div>
-              
-              {/* Coming Soon Badge */}
-              {feature.comingSoon && (
-                <div className="absolute top-6 right-6 px-4 py-2 bg-gradient-accent rounded-full text-sm font-bold text-white glow-accent">
-                  Coming Soon
-                </div>
-              )}
-
-              {/* Premium Icon */}
-              <div className={`relative z-10 w-16 h-16 rounded-2xl mb-8 flex items-center justify-center group-hover:scale-125 transition-all duration-500 ${
-                feature.color === 'primary' ? 'glass-music glow-premium' :
-                feature.color === 'secondary' ? 'glass-premium glow-audio' :
-                'glass-premium glow-accent'
-              }`}>
-                <feature.icon size={32} className={
-                  feature.color === 'primary' ? 'text-primary-glow' :
-                  feature.color === 'secondary' ? 'text-secondary-glow' :
-                  'text-accent-bright'
-                } />
-              </div>
-
-              {/* Premium Content */}
-              <div className="relative z-10">
-                <h3 className="text-2xl lg:text-3xl font-black mb-6 text-glow">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed text-lg">
-                  {feature.description}
-                </p>
-              </div>
-
-              {/* Interactive Audio Bars */}
-              {index % 3 === 0 && (
-                <div className="absolute bottom-4 right-4 audio-bars opacity-30 group-hover:opacity-60 transition-opacity duration-500">
-                  {Array.from({ length: 6 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className={`audio-bar ${feature.color === 'primary' ? 'bg-primary-glow' : feature.color === 'secondary' ? 'bg-secondary-glow' : 'bg-accent-bright'}`}
-                      style={{
-                        '--duration': `${0.6 + Math.random() * 1}s`,
-                        '--delay': `${Math.random() * 0.5}s`
-                      } as React.CSSProperties}
-                    />
-                  ))}
-                </div>
-              )}
+      {/* Sticky viewport */}
+      <div className="sticky top-0 h-screen bg-background-secondary overflow-hidden">
+        <div className="relative z-10 max-w-7xl mx-auto h-full px-6 py-16">
+          {/* Premium Header */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-3 px-6 py-3 glass-premium mb-6 pulse-premium">
+              <Star size={20} className="text-accent-bright" />
+              <span className="font-semibold text-accent-bright">Premium Features</span>
             </div>
-          ))}
-        </div>
+            
+            <h2 className="text-4xl lg:text-6xl font-black mb-6 text-gradient-premium">
+              Revolutionary AI Music Technology
+            </h2>
+          </div>
 
-        {/* Premium Call to Action */}
+          {/* Stacked Cards */}
+          <div className="relative h-full">
+            {stackedFeatures.map((feature, index) => (
+              <article
+                key={index}
+                className="
+                  sticky top-24
+                  mx-auto w-full lg:w-[92%] h-[60vh] max-h-[600px]
+                  rounded-3xl shadow-2xl overflow-hidden
+                  glass-premium
+                  will-change-transform transition-all duration-500
+                  group
+                "
+                style={{
+                  zIndex: 10 + index,
+                  transform: `scale(${1 - (stackedFeatures.length - 1 - index) * 0.02})`,
+                  opacity: 1 - (stackedFeatures.length - 1 - index) * 0.05,
+                  marginTop: index === 0 ? 0 : "18vh",
+                }}
+              >
+                {/* Premium Background Gradient */}
+                <div className={`absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700 ${feature.gradient}`}></div>
+                
+                {/* Coming Soon Badge */}
+                {feature.comingSoon && (
+                  <div className="absolute top-6 right-6 z-20 px-4 py-2 bg-gradient-accent rounded-full text-sm font-bold text-white glow-accent">
+                    Coming Soon
+                  </div>
+                )}
+
+                {/* Left side - Icon on mobile, full layout on desktop */}
+                <div className="absolute inset-0 lg:left-0 lg:top-0 lg:w-1/3 lg:h-full flex items-center justify-center p-8">
+                  <div className={`w-24 h-24 lg:w-32 lg:h-32 rounded-3xl flex items-center justify-center group-hover:scale-110 transition-all duration-500 ${
+                    feature.color === 'primary' ? 'glass-music glow-premium' :
+                    feature.color === 'secondary' ? 'glass-premium glow-audio' :
+                    'glass-premium glow-accent'
+                  }`}>
+                    <feature.icon size={48} className={`lg:w-16 lg:h-16 ${
+                      feature.color === 'primary' ? 'text-primary-glow' :
+                      feature.color === 'secondary' ? 'text-secondary-glow' :
+                      'text-accent-bright'
+                    }`} />
+                  </div>
+                </div>
+
+                {/* Right side - Content */}
+                <div className="relative z-10 h-full flex items-center lg:justify-end p-6 lg:p-8">
+                  <div className="max-w-2xl lg:w-2/3 text-center lg:text-left">
+                    <h3 className="text-2xl lg:text-4xl font-black mb-6 text-glow leading-tight">
+                      {feature.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed text-lg lg:text-xl">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Interactive Audio Bars */}
+                {index % 2 === 0 && (
+                  <div className="absolute bottom-6 right-6 audio-bars opacity-30 group-hover:opacity-60 transition-opacity duration-500">
+                    {Array.from({ length: 6 }).map((_, i) => (
+                      <div
+                        key={i}
+                        className={`audio-bar ${feature.color === 'primary' ? 'bg-primary-glow' : feature.color === 'secondary' ? 'bg-secondary-glow' : 'bg-accent-bright'}`}
+                        style={{
+                          '--duration': `${0.6 + Math.random() * 1}s`,
+                          '--delay': `${Math.random() * 0.5}s`
+                        } as React.CSSProperties}
+                      />
+                    ))}
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Premium Call to Action - Outside sticky viewport */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
         <div className="text-center glass-premium p-12 rounded-3xl glow-premium">
           <h3 className="text-3xl lg:text-4xl font-black mb-6 text-gradient-premium">
             Ready to revolutionize your music creation?
