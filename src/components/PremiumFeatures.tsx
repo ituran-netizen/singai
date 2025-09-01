@@ -7,8 +7,8 @@ const PremiumFeatures = () => {
       icon: Sparkles,
       title: "UNLOCK ENDLESS CREATIVE POSSIBILITIES",
       description: "Revolutionary AI music creation powered by advanced artificial intelligence. Generate completely original songs by describing your idea, or take full control customizing every element. With 200+ music genres and 200+ instruments, the possibilities are truly limitless.",
-      color: "primary",
-      gradient: "bg-gradient-premium"
+      color: "tertiary",
+      gradient: "bg-gradient-tertiary"
     },
     {
       icon: Music,
@@ -28,8 +28,8 @@ const PremiumFeatures = () => {
       icon: Users,
       title: "EXPLORE AND CONNECT WITH CREATORS",
       description: "Discover a vibrant global community of music creators. Listen to AI-generated songs and covers made by users worldwide. Share your own tracks and get discovered by a global audience passionate about AI music creation.",
-      color: "primary",
-      gradient: "bg-gradient-premium"
+      color: "secondary",
+      gradient: "bg-gradient-audio"
     },
     {
       icon: Music,
@@ -50,8 +50,8 @@ const PremiumFeatures = () => {
       icon: Download,
       title: "DOWNLOAD AND SHARE FREELY",
       description: "All songs created are 100% royalty-free with full ownership rights. Export with custom visuals and share anywhere - social media, messages, streaming platforms, or your professional portfolio. Monetize your creations without restrictions.",
-      color: "primary",
-      gradient: "bg-gradient-premium"
+      color: "tertiary",
+      gradient: "bg-gradient-tertiary"
     },
     {
       icon: Zap,
@@ -118,12 +118,14 @@ const PremiumFeatures = () => {
               {/* Premium Icon */}
               <div className={`relative z-10 w-16 h-16 rounded-2xl mb-8 flex items-center justify-center group-hover:scale-125 transition-all duration-500 ${
                 feature.color === 'primary' ? 'glass-music glow-premium' :
-                feature.color === 'secondary' ? 'glass-premium glow-audio' :
+                feature.color === 'secondary' ? 'glass-teal glow-audio' :
+                feature.color === 'tertiary' ? 'glass-orange glow-tertiary' :
                 'glass-premium glow-accent'
               }`}>
                 <feature.icon size={32} className={
                   feature.color === 'primary' ? 'text-primary-glow' :
                   feature.color === 'secondary' ? 'text-secondary-glow' :
+                  feature.color === 'tertiary' ? 'text-tertiary-glow' :
                   'text-accent-bright'
                 } />
               </div>
@@ -144,7 +146,7 @@ const PremiumFeatures = () => {
                   {Array.from({ length: 6 }).map((_, i) => (
                     <div
                       key={i}
-                      className={`audio-bar ${feature.color === 'primary' ? 'bg-primary-glow' : feature.color === 'secondary' ? 'bg-secondary-glow' : 'bg-accent-bright'}`}
+                      className={`audio-bar ${feature.color === 'primary' ? 'bg-primary-glow' : feature.color === 'secondary' ? 'bg-secondary-glow' : feature.color === 'tertiary' ? 'bg-tertiary-glow' : 'bg-accent-bright'}`}
                       style={{
                         '--duration': `${0.6 + Math.random() * 1}s`,
                         '--delay': `${Math.random() * 0.5}s`
