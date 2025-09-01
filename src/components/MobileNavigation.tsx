@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
+import Logo from './ui/logo';
 
 interface MobileNavigationProps {
   isOpen: boolean;
@@ -95,11 +96,7 @@ const MobileNavigation = ({ isOpen, onClose }: MobileNavigationProps) => {
         {/* Footer */}
         <div className="p-6 border-t border-primary/20">
           <div className="flex items-center justify-center gap-3">
-            <img 
-              src="/src/assets/logo.png" 
-              alt="Sing AI Logo" 
-              className="w-6 h-6 object-contain"
-            />
+            <Logo className="scale-75" />
             <span className="text-lg font-bold text-muted-foreground">Sing AI</span>
           </div>
         </div>

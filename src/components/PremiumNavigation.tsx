@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu } from 'lucide-react';
 import MobileNavigation from './MobileNavigation';
+import Logo from './ui/logo';
 
 const PremiumNavigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,11 +19,7 @@ const PremiumNavigation = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <div className="flex items-center gap-3">
-              <img 
-                src="/src/assets/logo.png" 
-                alt="Sing AI Logo" 
-                className="w-8 h-8 object-contain hover:scale-110 transition-transform duration-300"
-              />
+              <Logo animated className="hover:scale-110 transition-transform duration-300" />
               <span className="text-2xl font-black text-gradient-premium">Sing AI</span>
             </div>
           </Link>

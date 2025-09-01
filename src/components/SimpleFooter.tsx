@@ -1,14 +1,12 @@
+import Logo from './ui/logo';
+
 const SimpleFooter = () => {
   return (
     <footer className="bg-background-secondary py-16 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Logo */}
         <div className="flex items-center justify-center gap-3 mb-8">
-          <img 
-            src="/src/assets/logo.png" 
-            alt="Sing AI Logo" 
-            className="w-10 h-10 object-contain"
-          />
+          <Logo className="scale-125" />
           <span className="text-3xl font-bold text-foreground">Sing AI</span>
         </div>
 
