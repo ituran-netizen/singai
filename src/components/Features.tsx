@@ -1,5 +1,32 @@
 import { useState, useEffect } from "react";
-import { Star } from "lucide-react"; // adjust if your Star import is different
+import { Star, Music, Mic, Users } from "lucide-react";
+
+const features = [
+  {
+    title: "AI Music Creation",
+    description: "Create original songs from scratch using advanced AI technology. Transform your ideas into professional-quality music with just a few clicks.",
+    icon: Music,
+    color: "primary" as const,
+    gradient: "bg-gradient-to-br from-primary/20 to-primary-glow/20",
+    comingSoon: false
+  },
+  {
+    title: "Voice Cloning",
+    description: "Clone any voice with incredible accuracy. Create covers of your favorite songs using your own voice or generate completely new vocal performances.",
+    icon: Mic,
+    color: "secondary" as const,
+    gradient: "bg-gradient-to-br from-secondary/20 to-secondary-glow/20",
+    comingSoon: false
+  },
+  {
+    title: "Music Community",
+    description: "Share your creations with a global community of music makers. Discover new trends, collaborate with artists, and get feedback on your work.",
+    icon: Users,
+    color: "accent" as const,
+    gradient: "bg-gradient-to-br from-accent/20 to-accent-bright/20",
+    comingSoon: true
+  }
+];
 
 export default function PremiumSection() {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
@@ -116,7 +143,7 @@ export default function PremiumSection() {
                       style={{
                         "--duration": `${0.6 + Math.random() * 1}s`,
                         "--delay": `${Math.random() * 0.5}s`
-                      }}
+                      } as React.CSSProperties}
                     />
                   ))}
                 </div>
