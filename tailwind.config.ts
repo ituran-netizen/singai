@@ -42,6 +42,12 @@ export default {
 					foreground: 'hsl(var(--accent-foreground))',
 					bright: 'hsl(var(--accent-bright))'
 				},
+				tertiary: {
+					DEFAULT: 'hsl(var(--tertiary))',
+					foreground: 'hsl(var(--tertiary-foreground))',
+					bright: 'hsl(var(--tertiary-bright))',
+					glow: 'hsl(var(--tertiary-glow))'
+				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
