@@ -23,18 +23,18 @@ Outshining HubX and Nova with music-themed sophistication
     /* Sophisticated Card System */
     --card: 0 0% 8% / 0.8;              /* Translucent dark cards */
     --card-foreground: 0 0% 98%;
-    --card-border: 262 83% 58% / 0.2;   /* Subtle purple borders */
+    --card-border: 280 95% 39% / 0.2;   /* Subtle purple borders */
     --card-glass: 0 0% 100% / 0.05;     /* Ultra-subtle glass effect */
 
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
 
-    /* Premium Brand Colors - Music-inspired */
-    --primary: 262 83% 58%;             /* Signature purple */
-    --primary-bright: 262 100% 70%;     /* Brighter variant */
-    --primary-glow: 262 100% 80%;       /* Glowing effect */
+    /* Premium Brand Colors - Custom Purple Theme */
+    --primary: 280 95% 39%;             /* #8E05C2 - Main brand color */
+    --primary-bright: 270 100% 44%;     /* #7100E2 - Deeper variant */
+    --primary-glow: 280 100% 70%;       /* Lighter glow effect */
     --primary-foreground: 0 0% 100%;
-    --primary-light: 262 83% 95%;
+    --primary-light: 280 95% 95%;
 
     /* Secondary - Electric Audio Blue */
     --secondary: 200 100% 60%;          /* Electric blue */
@@ -56,23 +56,23 @@ Outshining HubX and Nova with music-themed sophistication
 
     --border: 0 0% 20% / 0.3;
     --input: 0 0% 15%;
-    --ring: 262 83% 58%;
+    --ring: 280 95% 39%;
 
     --radius: 1rem;
 
     /* Advanced Gradient System */
-    --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(262 100% 70% / 0.4), transparent 70%), 
-                     linear-gradient(135deg, hsl(0 0% 4%), hsl(262 50% 8%), hsl(200 100% 8%), hsl(0 0% 4%));
-    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(320 100% 70%));
-    --gradient-secondary: linear-gradient(135deg, hsl(200 100% 60%), hsl(262 83% 58%));
-    --gradient-accent: linear-gradient(135deg, hsl(320 100% 70%), hsl(262 100% 70%));
-    --gradient-text: linear-gradient(135deg, hsl(262 100% 80%), hsl(200 100% 70%), hsl(320 100% 80%));
+    --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(280 100% 70% / 0.4), transparent 70%), 
+                     linear-gradient(135deg, hsl(0 0% 4%), hsl(280 50% 8%), hsl(200 100% 8%), hsl(0 0% 4%));
+    --gradient-primary: linear-gradient(135deg, hsl(280 95% 39%), hsl(320 100% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(200 100% 60%), hsl(280 95% 39%));
+    --gradient-accent: linear-gradient(135deg, hsl(320 100% 70%), hsl(280 100% 70%));
+    --gradient-text: linear-gradient(135deg, hsl(280 100% 80%), hsl(200 100% 70%), hsl(320 100% 80%));
     
     /* Premium Effects */
-    --glow-primary: 0 0 80px hsl(262 100% 70% / 0.6), 0 0 40px hsl(262 100% 70% / 0.4);
+    --glow-primary: 0 0 80px hsl(280 100% 70% / 0.6), 0 0 40px hsl(280 100% 70% / 0.4);
     --glow-secondary: 0 0 60px hsl(200 100% 70% / 0.5), 0 0 30px hsl(200 100% 70% / 0.3);
     --glow-accent: 0 0 60px hsl(320 100% 70% / 0.5), 0 0 30px hsl(320 100% 70% / 0.3);
-    --shadow-premium: 0 25px 50px hsl(262 100% 4% / 0.5), 0 0 100px hsl(262 100% 70% / 0.1);
+    --shadow-premium: 0 25px 50px hsl(280 100% 4% / 0.5), 0 0 100px hsl(280 100% 70% / 0.1);
     --backdrop-premium: blur(40px) saturate(200%);
 
     /* Typography Scale - Exact Specifications */
@@ -94,7 +94,7 @@ Outshining HubX and Nova with music-themed sophistication
 
   .glass-music {
     @apply backdrop-blur-2xl border border-primary/20 rounded-2xl;
-    background: linear-gradient(135deg, hsl(262 100% 70% / 0.1), hsl(200 100% 70% / 0.05));
+    background: linear-gradient(135deg, hsl(280 100% 70% / 0.1), hsl(200 100% 70% / 0.05));
     box-shadow: var(--glow-primary);
   }
 
@@ -152,7 +152,7 @@ Outshining HubX and Nova with music-themed sophistication
   }
 
   .text-glow {
-    text-shadow: 0 0 20px hsl(262 100% 80% / 0.8), 0 0 40px hsl(262 100% 80% / 0.4);
+    text-shadow: 0 0 20px hsl(280 100% 80% / 0.8), 0 0 40px hsl(280 100% 80% / 0.4);
   }
 
   /* Audio Visualizer Effect */
@@ -188,11 +188,11 @@ Outshining HubX and Nova with music-themed sophistication
 
   @keyframes pulsePremium {
     0% {
-      box-shadow: 0 0 40px hsl(262 100% 70% / 0.4);
+      box-shadow: 0 0 40px hsl(280 100% 70% / 0.4);
       transform: scale(1);
     }
     100% {
-      box-shadow: 0 0 80px hsl(262 100% 70% / 0.8), 0 0 120px hsl(200 100% 70% / 0.4);
+      box-shadow: 0 0 80px hsl(280 100% 70% / 0.8), 0 0 120px hsl(200 100% 70% / 0.4);
       transform: scale(1.05);
     }
   }
