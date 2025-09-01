@@ -75,7 +75,7 @@ const PremiumHero = () => {
             {/* Premium CTA Buttons - Mobile Priority Layout */}
             <div className="flex flex-col gap-6 mb-16">
               {/* Primary CTA - Download App (Mobile First) */}
-              <a href="https://play.google.com/store/apps/details?id=com.proksi.singai" target="_blank" rel="noopener noreferrer" className="w-full">
+              <a href="https://singai.onelink.me/OR6k/698ln6sq" target="_blank" rel="noopener noreferrer" className="w-full">
                 <Button 
                   size="lg" 
                   className="bg-gradient-premium hover:scale-105 transition-all duration-500 glow-premium text-lg sm:text-xl px-8 py-6 h-auto rounded-2xl font-bold shadow-2xl group w-full"
