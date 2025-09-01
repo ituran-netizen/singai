@@ -118,7 +118,7 @@ const PremiumFeatures = () => {
               {/* Premium Icon */}
               <div className={`relative z-10 w-16 h-16 rounded-2xl mb-8 flex items-center justify-center group-hover:scale-125 transition-all duration-500 ${
                 feature.color === 'primary' ? 'glass-music glow-premium' :
-                feature.color === 'secondary' ? 'glass-teal glow-audio' :
+                feature.color === 'secondary' ? 'glass-white glow-audio' :
                 feature.color === 'tertiary' ? 'glass-orange glow-tertiary' :
                 'glass-premium glow-accent'
               }`}>

@@ -36,11 +36,11 @@ Outshining HubX and Nova with music-themed sophistication
     --primary-foreground: 0 0% 100%;
     --primary-light: 280 95% 95%;
 
-    /* Secondary - Teal Accent */
-    --secondary: 180 100% 50%;          /* Teal for balance */
-    --secondary-bright: 180 100% 60%;   /* Brighter teal */
-    --secondary-glow: 180 100% 70%;     /* Glowing teal */
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary - White Accent */
+    --secondary: 0 0% 100%;             /* Pure white for accent */
+    --secondary-bright: 0 0% 100%;      /* White variant */
+    --secondary-glow: 0 0% 90%;         /* Slightly dimmed white */
+    --secondary-foreground: 0 0% 0%;
 
     /* Accent - Neon Pink */
     --accent: 320 100% 70%;             /* Hot pink accent */
@@ -68,16 +68,16 @@ Outshining HubX and Nova with music-themed sophistication
 
     /* Advanced Gradient System */
     --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(280 100% 70% / 0.4), transparent 70%), 
-                     linear-gradient(135deg, hsl(0 0% 4%), hsl(280 50% 8%), hsl(180 50% 8%), hsl(0 0% 4%));
+                     linear-gradient(135deg, hsl(0 0% 4%), hsl(280 50% 8%), hsl(0 0% 15%), hsl(0 0% 4%));
     --gradient-primary: linear-gradient(135deg, hsl(280 95% 39%), hsl(320 100% 70%));
-    --gradient-secondary: linear-gradient(135deg, hsl(180 100% 50%), hsl(280 95% 39%));
+    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 100%), hsl(280 95% 39%));
     --gradient-accent: linear-gradient(135deg, hsl(320 100% 70%), hsl(280 100% 70%));
     --gradient-tertiary: linear-gradient(135deg, hsl(30 100% 60%), hsl(280 95% 39%));
-    --gradient-text: linear-gradient(135deg, hsl(280 100% 80%), hsl(180 100% 70%), hsl(30 100% 80%));
+    --gradient-text: linear-gradient(135deg, hsl(280 100% 80%), hsl(0 0% 100%), hsl(30 100% 80%));
     
     /* Premium Effects */
     --glow-primary: 0 0 80px hsl(280 100% 70% / 0.6), 0 0 40px hsl(280 100% 70% / 0.4);
-    --glow-secondary: 0 0 60px hsl(180 100% 70% / 0.5), 0 0 30px hsl(180 100% 70% / 0.3);
+    --glow-secondary: 0 0 60px hsl(0 0% 100% / 0.5), 0 0 30px hsl(0 0% 100% / 0.3);
     --glow-accent: 0 0 60px hsl(320 100% 70% / 0.5), 0 0 30px hsl(320 100% 70% / 0.3);
     --glow-tertiary: 0 0 60px hsl(30 100% 70% / 0.5), 0 0 30px hsl(30 100% 70% / 0.3);
     --shadow-premium: 0 25px 50px hsl(280 100% 4% / 0.5), 0 0 100px hsl(280 100% 70% / 0.1);
@@ -102,14 +102,14 @@ Outshining HubX and Nova with music-themed sophistication
 
   .glass-music {
     @apply backdrop-blur-2xl border border-primary/20 rounded-2xl;
-    background: linear-gradient(135deg, hsl(280 100% 70% / 0.1), hsl(180 100% 70% / 0.05));
+    background: linear-gradient(135deg, hsl(280 100% 70% / 0.1), hsl(0 0% 100% / 0.05));
     box-shadow: var(--glow-primary);
   }
 
   /* Additional Glass Variations */
-  .glass-teal {
+  .glass-white {
     @apply backdrop-blur-2xl border border-secondary/20 rounded-2xl;
-    background: linear-gradient(135deg, hsl(180 100% 70% / 0.1), hsl(280 100% 70% / 0.05));
+    background: linear-gradient(135deg, hsl(0 0% 100% / 0.1), hsl(280 100% 70% / 0.05));
     box-shadow: var(--glow-secondary);
   }
 
@@ -221,7 +221,7 @@ Outshining HubX and Nova with music-themed sophistication
       transform: scale(1);
     }
     100% {
-      box-shadow: 0 0 80px hsl(280 100% 70% / 0.8), 0 0 120px hsl(180 100% 70% / 0.4);
+      box-shadow: 0 0 80px hsl(280 100% 70% / 0.8), 0 0 120px hsl(0 0% 100% / 0.4);
       transform: scale(1.05);
     }
   }
