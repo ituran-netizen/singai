@@ -4,15 +4,11 @@ const SimpleFooter = () => {
       <div className="max-w-6xl mx-auto">
         {/* Logo */}
         <div className="flex items-center justify-center gap-3 mb-8">
-          <div className="flex items-center">
-            {/* Sound wave icon */}
-            <div className="flex items-end gap-1">
-              <div className="w-1 h-4 bg-primary rounded-full"></div>
-              <div className="w-1 h-6 bg-primary rounded-full"></div>
-              <div className="w-1 h-3 bg-primary rounded-full"></div>
-              <div className="w-1 h-5 bg-primary rounded-full"></div>
-            </div>
-          </div>
+          <img 
+            src="/src/assets/logo.png" 
+            alt="Sing AI Logo" 
+            className="w-10 h-10 object-contain"
+          />
           <span className="text-3xl font-bold text-foreground">Sing AI</span>
         </div>
 

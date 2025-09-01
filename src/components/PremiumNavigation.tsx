@@ -18,13 +18,11 @@ const PremiumNavigation = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <div className="flex items-center gap-3">
-              <div className="flex items-end gap-1">
-                <div className="w-1 h-6 bg-primary-glow rounded-full wave-animation" style={{animationDelay: '0s'}}></div>
-                <div className="w-1 h-8 bg-secondary-glow rounded-full wave-animation" style={{animationDelay: '0.2s'}}></div>
-                <div className="w-1 h-4 bg-accent-bright rounded-full wave-animation" style={{animationDelay: '0.4s'}}></div>
-                <div className="w-1 h-7 bg-primary-glow rounded-full wave-animation" style={{animationDelay: '0.6s'}}></div>
-                <div className="w-1 h-5 bg-secondary-glow rounded-full wave-animation" style={{animationDelay: '0.8s'}}></div>
-              </div>
+              <img 
+                src="/src/assets/logo.png" 
+                alt="Sing AI Logo" 
+                className="w-8 h-8 object-contain hover:scale-110 transition-transform duration-300"
+              />
               <span className="text-2xl font-black text-gradient-premium">Sing AI</span>
             </div>
           </Link>
