@@ -1,86 +1,66 @@
-import { Music, Mic, Users, Star } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
-import aiMusicImage from "@/assets/ai-music-creation.jpg";
-import voiceCloningImage from "@/assets/voice-cloning-feature.jpg";
-import musicCommunityImage from "@/assets/music-community.jpg";
+import { Music, Mic, Palette, Users, Download, Sparkles, Zap, Star } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const PremiumFeatures = () => {
-  const [activeCardIndex, setActiveCardIndex] = useState(0);
-  const [isFirstCardVisible, setIsFirstCardVisible] = useState(false);
-  const [isSecondCardVisible, setIsSecondCardVisible] = useState(false);
-  const [isThirdCardVisible, setIsThirdCardVisible] = useState(false);
-  const cardsContainerRef = useRef<HTMLDivElement>(null);
-
   const features = [
     {
+      icon: Sparkles,
+      title: "UNLOCK ENDLESS CREATIVE POSSIBILITIES",
+      description: "Revolutionary AI music creation powered by advanced artificial intelligence. Generate completely original songs by describing your idea, or take full control customizing every element. With 200+ music genres and 200+ instruments, the possibilities are truly limitless.",
+      color: "tertiary",
+      gradient: "bg-gradient-tertiary"
+    },
+    {
       icon: Music,
-      title: "AI-Powered Song Generation",
-      description: "Revolutionary AI music creation powered by advanced artificial intelligence. Generate completely original songs by describing your idea, or take full control customizing every element.",
-      badge: "Create",
-      mobileImage: aiMusicImage,
-      desktopImage: aiMusicImage,
-      gradient: "bg-gradient-primary"
+      title: "AI-POWERED SONG GENERATION",
+      description: "Start with a simple idea and watch AI create a complete composition tailored to your theme. Includes intelligent melody, chord progression, lyrics, vocals, mood, and instrument selection. Perfect for heartfelt messages, rap verses, or ambient instrumentals.",
+      color: "secondary",
+      gradient: "bg-gradient-audio"
     },
     {
       icon: Mic,
-      title: "Voice Cloning for Custom Covers",
-      description: "Upload a voice sample and AI generates a vocal model that can sing any track. Explore different voice styles to reinterpret existing songs in entirely new ways.",
-      badge: "Clone",
-      mobileImage: voiceCloningImage,
-      desktopImage: voiceCloningImage,
+      title: "VOICE CLONING FOR CUSTOM COVERS",
+      description: "Upload a voice sample and AI generates a vocal model that can sing any track. Explore different voice styles to reinterpret existing songs in entirely new ways while preserving the original melody and rhythm for seamless listening.",
+      color: "accent",
       gradient: "bg-gradient-accent"
     },
     {
       icon: Users,
-      title: "Global Music Community",
-      description: "Discover a vibrant global community of music creators. Listen to AI-generated songs and covers made by users worldwide. Share your own tracks and get discovered.",
-      badge: "Connect",
-      mobileImage: musicCommunityImage,
-      desktopImage: musicCommunityImage,
-      gradient: "bg-gradient-secondary"
+      title: "EXPLORE AND CONNECT WITH CREATORS",
+      description: "Discover a vibrant global community of music creators. Listen to AI-generated songs and covers made by users worldwide. Share your own tracks and get discovered by a global audience passionate about AI music creation.",
+      color: "secondary",
+      gradient: "bg-gradient-audio"
+    },
+    {
+      icon: Music,
+      title: "BUILD AND SHARE YOUR MUSIC LIBRARY",
+      description: "Save favorite songs and build custom playlists. Create themed collections for workouts, road trips, emotional memories, or any mood. Share them with friends or keep them private for your personal musical journey.",
+      color: "secondary",
+      gradient: "bg-gradient-audio"
+    },
+    {
+      icon: Palette,
+      title: "COMING SOON: REMIX MODE",
+      description: "Reimagine songs your way with advanced AI remixing tools. Change lyrics, swap voices, adjust mood, and transform tracks with completely new vibes. Make any song entirely your own with unprecedented creative control.",
+      color: "accent",
+      gradient: "bg-gradient-accent",
+      comingSoon: true
+    },
+    {
+      icon: Download,
+      title: "DOWNLOAD AND SHARE FREELY",
+      description: "All songs created are 100% royalty-free with full ownership rights. Export with custom visuals and share anywhere - social media, messages, streaming platforms, or your professional portfolio. Monetize your creations without restrictions.",
+      color: "tertiary",
+      gradient: "bg-gradient-tertiary"
+    },
+    {
+      icon: Zap,
+      title: "MUSIC FOR EVERYONE — NO EXPERIENCE NEEDED",
+      description: "Designed for all creators regardless of musical background. Whether you're a complete beginner or experienced musician, create studio-quality tracks in minutes using only your phone and voice. Professional results, zero learning curve.",
+      color: "secondary",
+      gradient: "bg-gradient-audio"
     }
   ];
-
-  const cardStyle = {
-    borderRadius: "24px",
-    transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Trigger card animations in sequence
-            setTimeout(() => setIsFirstCardVisible(true), 200);
-            setTimeout(() => setIsSecondCardVisible(true), 600);
-            setTimeout(() => setIsThirdCardVisible(true), 1000);
-            
-            // Auto-advance through cards
-            setTimeout(() => setActiveCardIndex(1), 1500);
-            setTimeout(() => setActiveCardIndex(2), 3000);
-            setTimeout(() => setActiveCardIndex(0), 4500);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    if (cardsContainerRef.current) {
-      observer.observe(cardsContainerRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  // Auto cycle through cards
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveCardIndex((prev) => (prev + 1) % 3);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section className="py-32 px-6 relative overflow-hidden bg-background-secondary">
@@ -93,112 +73,95 @@ const PremiumFeatures = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Premium Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-20">
           <div className="inline-flex items-center gap-3 px-6 py-3 glass-premium mb-8 pulse-premium">
             <Star size={20} className="text-accent-bright" />
             <span className="font-semibold text-accent-bright">Premium Features</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-gradient-premium">
-            Revolutionary AI Voice Technology
+          <h2 className="text-5xl lg:text-7xl font-black mb-8 text-gradient-premium">
+            Sing AI: Create, Cover & Share Music with AI
           </h2>
-        </div>
-
-        {/* Layered Cards Container */}
-        <div className="container px-6 lg:px-8 mx-auto h-full flex flex-col">
-          <div
-            ref={cardsContainerRef}
-            className="relative flex-1 perspective-1000 min-h-[600px]"
-          >
-            {features.map((feature, index) => {
-              const isVisible = index === 0 ? isFirstCardVisible : 
-                               index === 1 ? isSecondCardVisible : 
-                               isThirdCardVisible;
-              
-              const zIndex = 10 + (index * 10);
-              const scale = index === 0 ? 0.9 : index === 1 ? 0.95 : 1;
-              const translateY = isVisible
-                ? activeCardIndex === index
-                  ? index === 0 ? "90px" : index === 1 ? "55px" : "15px"
-                  : index === 0 ? "90px" : index === 1 ? "45px" : "0"
-                : "200px";
-
-              return (
-                <div
-                  key={index}
-                  className={`absolute inset-0 overflow-hidden shadow-xl ${
-                    isVisible ? "animate-card-enter" : ""
-                  }`}
-                  style={{
-                    ...cardStyle,
-                    zIndex,
-                    transform: `translateY(${translateY}) scale(${scale})`,
-                    opacity: isVisible ? 1 : 0,
-                    pointerEvents: isVisible ? "auto" : "none",
-                  }}
-                >
-                  {/* Background Gradient */}
-                  <div className={`absolute inset-0 z-0 ${feature.gradient} opacity-20`}></div>
-
-                  {/* Badge */}
-                  <div className="absolute top-4 right-4 z-20 hidden md:flex">
-                    <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white">
-                      <span className="text-sm font-medium">{feature.badge}</span>
-                    </div>
-                  </div>
-
-                  {/* Mobile: Background image */}
-                  <div
-                    className={`absolute inset-0 z-5 bg-center bg-contain bg-no-repeat transition-opacity duration-300 md:hidden ${
-                      activeCardIndex > index ? "opacity-0" : "opacity-80"
-                    }`}
-                    style={{
-                      backgroundImage: `url(${feature.mobileImage})`,
-                    }}
-                  ></div>
-
-                  {/* Desktop: Left side image */}
-                  <div
-                    className={`hidden md:block absolute left-0 top-0 w-1/2 h-full z-5 transition-opacity duration-300 ${
-                      activeCardIndex > index ? "opacity-0" : "opacity-100"
-                    }`}
-                  >
-                    <img
-                      src={feature.desktopImage}
-                      alt={`${feature.title} illustration`}
-                      className="w-full h-full object-contain object-center"
-                    />
-                  </div>
-
-                  {/* Content */}
-                  <div
-                    className={`relative z-10 p-5 sm:p-6 md:p-8 h-full flex flex-col md:flex-row md:items-center justify-end transition-opacity duration-300 ${
-                      activeCardIndex > index ? "opacity-0" : "opacity-100"
-                    }`}
-                  >
-                    <div className="max-w-lg md:w-1/2 flex flex-col justify-end">
-                      <div className="flex items-center gap-4 mb-4 md:hidden">
-                        <feature.icon size={24} className="text-primary-glow" />
-                        <span className="text-sm font-medium text-primary-glow">{feature.badge}</span>
-                      </div>
-                      
-                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-black leading-tight mb-4 text-center md:text-left text-foreground drop-shadow-2xl">
-                        {feature.title}
-                      </h3>
-                      
-                      <p className="text-lg text-muted-foreground leading-relaxed text-center md:text-left">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+          
+          <div className="max-w-5xl mx-auto glass-music p-8 rounded-3xl">
+            <h3 className="text-3xl lg:text-4xl font-bold mb-6 text-glow">
+              SING AI – YOUR VOICE. YOUR MUSIC. POWERED BY AI
+            </h3>
+            <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed">
+              Create songs from scratch, cover your favorites with your own voice, and share your music with 
+              the world. Experience music creation like never before — with the power of Sing AI.
+            </p>
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center glass-premium p-12 rounded-3xl glow-premium mt-20">
+        {/* Premium Features Grid - Mobile Stacked */}
+        <div className="space-y-8 lg:grid lg:grid-cols-2 lg:gap-8 lg:space-y-0 mb-20">
+          {features.map((feature, index) => {
+            const cardRef = useScrollReveal<HTMLDivElement>(0.1);
+            return (
+              <div 
+                key={index}
+                ref={cardRef}
+                className="opacity-0 translate-y-8 transition-all duration-700 group relative overflow-hidden rounded-3xl glass-premium p-8 hover:scale-105 revealed:opacity-100 revealed:translate-y-0"
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
+              {/* Premium Background Gradient */}
+              <div className={`absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-700 ${feature.gradient}`}></div>
+              
+              {/* Coming Soon Badge */}
+              {feature.comingSoon && (
+                <div className="absolute top-6 right-6 px-4 py-2 bg-gradient-accent rounded-full text-sm font-bold text-white glow-accent">
+                  Coming Soon
+                </div>
+              )}
+
+              {/* Premium Icon */}
+              <div className={`relative z-10 w-16 h-16 rounded-2xl mb-8 flex items-center justify-center group-hover:scale-125 transition-all duration-500 ${
+                feature.color === 'primary' ? 'glass-music glow-premium' :
+                feature.color === 'secondary' ? 'glass-white glow-audio' :
+                feature.color === 'tertiary' ? 'glass-orange glow-tertiary' :
+                'glass-premium glow-accent'
+              }`}>
+                <feature.icon size={32} className={
+                  feature.color === 'primary' ? 'text-primary-glow' :
+                  feature.color === 'secondary' ? 'text-secondary-glow' :
+                  feature.color === 'tertiary' ? 'text-tertiary-glow' :
+                  'text-accent-bright'
+                } />
+              </div>
+
+              {/* Premium Content */}
+              <div className="relative z-10">
+                <h3 className="text-2xl lg:text-3xl font-black mb-6 text-glow">
+                  {feature.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed text-lg">
+                  {feature.description}
+                </p>
+              </div>
+
+              {/* Interactive Audio Bars */}
+              {index % 3 === 0 && (
+                <div className="absolute bottom-4 right-4 audio-bars opacity-30 group-hover:opacity-60 transition-opacity duration-500">
+                  {Array.from({ length: 6 }).map((_, i) => (
+                    <div
+                      key={i}
+                      className={`audio-bar ${feature.color === 'primary' ? 'bg-primary-glow' : feature.color === 'secondary' ? 'bg-secondary-glow' : feature.color === 'tertiary' ? 'bg-tertiary-glow' : 'bg-accent-bright'}`}
+                      style={{
+                        '--duration': `${0.6 + Math.random() * 1}s`,
+                        '--delay': `${Math.random() * 0.5}s`
+                      } as React.CSSProperties}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+            );
+          })}
+        </div>
+
+        {/* Premium Call to Action */}
+        <div className="text-center glass-premium p-12 rounded-3xl glow-premium">
           <h3 className="text-3xl lg:text-4xl font-black mb-6 text-gradient-premium">
             Ready to revolutionize your music creation?
           </h3>
